@@ -1,0 +1,17 @@
+﻿@model CheeseMVC.ViewModels.AddMenuViewModel
+@{
+    ViewBag.Title = "New Menu";
+}
+<h1>New Menu</h1>
+<form asp-controller="Menu" asp-action="Add" method="post">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <button>Submit</button>
+        <!-- This button have double close, you can add stuff
+        to it, The bottom cannot its just used to render a Button. Top is Bootstrap-->
+        <input type="button" value="Fake Button" />
+        <input type="submit" value="Create Menu" />
+        <p><span asp-validation-for="Name"></span></p>
+    </div>
+</form>

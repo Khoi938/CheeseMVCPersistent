@@ -1,0 +1,16 @@
+﻿@model IEnumerable<CheeseMVC.Models.Menu> 
+
+<h1>@ViewBag.h1</h1>
+<ul>
+    @foreach (var menu in Model)
+    {
+        <li><a asp-controller="Menu" asp-action="ViewMenu" 
+               asp-route-id="@menu.ID">@menu.Name</a></li>
+      <!-- The asp-route-* can be anything but must matched the name of the
+          passed in var. exp:
+          public IActionresult Stuff(int here) Must == to asp-route-here="" 
+          however the default is "id" that is if you pass in 
+          {controller}/{action}/{id}<-It is imply id -->
+    }
+</ul>
+<p><a asp-controller="Menu" asp-action="Add">Add Menu</a></p>
